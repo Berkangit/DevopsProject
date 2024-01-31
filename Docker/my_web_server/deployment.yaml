@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Devops
+  name: devops
   namespace: project1
   labels:
-    app: Devops
+    app: devops
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: Devops
+      app: devops
   template:
     metadata:
       labels:
-        app: Devops
+        app: devops
     spec:
       containers:
       - name: project
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Devops
+  name: devops
   namespace: project1
 spec:
   selector:
-    app: Devops
+    app: devops
   ports:
   - protocol: TCP
     port: 80

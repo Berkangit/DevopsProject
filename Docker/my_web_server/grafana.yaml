@@ -1,28 +1,24 @@
-
 grafana:
-  adminUser: admin
-  adminPassword: zımba
+    adminUser: admin
+    adminPassword: prom-operator
 
-  ingress:
-    enabled: true
-    annotations:
-      kubernetes.io/ingress.class: "gce"
-      gce.ingress.kubernetes.io/rewrite-target: /$1
-      gce.ingress.kubernetes.io/use-regex: "true"
-    path: /grafana/?(.*)
-    hosts:
-      
+    ingress:
+        enabled: true
+        annotations:
+            kubernetes.io/ingress.class: "gce"
+            gce.ingress.kubernetes.io/rewrite-target: /$1
+            gce.ingress.kubernetes.io/use-regex: "true"
+        path: /grafana/?(.*)
+        hosts:
+            
 k8s.cluster.local
 
-  plugins:
-  
+    plugins:
+        
 digrich-bubblechart-panel
 grafana-clock-panel
 grafana-piechart-panel
 
-  grafana.ini:
-    server:
-      root_url: http://localhost:3000/grafana 
-    smtp:
-       enabled: false
-    
+    grafana.ini:
+        server:
+            root_url: http://localhost:3000/grafana
